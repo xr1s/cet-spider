@@ -6,14 +6,9 @@ cetdb.py里有两个CET查询网站，已经搞好了这俩网站的API，直接
 
 使用方法：
 
-## 只查询单个成绩
+## 查询单个成绩
 
-如果没有全校学生信息的，仅仅查询自己的成绩可以如此
-
-```
-from cetdb import *
-chsi.query(your_name, admission_ticket)
-```
+如果没有全校学生信息的，仅仅查询自己的成绩可以直接执行cetdb.py
 
 返回一个dict，有各项信息。
 

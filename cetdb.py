@@ -36,7 +36,7 @@ class sushe99:
             return None
         response = response.strip('\x00').split(',')
         if len(response) == 1:
-            print(name, errorlist[int(response[0])])
+            print(name, sushe99.errorlist[int(response[0])])
             failed.put(name)
             return None
         listen, read, write, full = map(int, response[2:6])
@@ -105,4 +105,9 @@ class chsi:
             '口语准考证': spoken_ticket,
             '口语成绩': spoken,
         }
+
+if __name__ == '__main__':
+    name = input('Your name: ')
+    ticket = input('Your admission ticket: ')
+    print('result:', sushe99.query(name, ticket))
 
