@@ -1,18 +1,28 @@
-# Querier for CET
+# CET Spider
 
-懒得写英文了，写中文好了。
+Query CET 4, CET 6, and similar college language tests from those websites who provide query service. 
 
-cetdb.py里有两个CET查询网站，已经搞好了这俩网站的API，直接查询即可。
+chsi is still available but 99sushe does not provides in 2017, so deleted.
 
-使用方法：
+This project is asynchronous now.
 
-## 查询单个成绩
+## Prerequisite
 
-如果没有全校学生信息的，仅仅查询自己的成绩可以直接执行cetdb.py
+The `async` and `await` key words needs CPython 3.5 support.
 
-返回一个dict，有各项信息。
+This project uses `aiohttp` to send and recv HTTP requests, `bs4` parse html.
 
-## 批量查询成绩
+Neccessary if you need read XLS or XLSX file, please install xlrd first.
 
-如果有全校学生的xls或者xlsx，用了xlrd读取，文件名储存为student\_info.xlsx然后就可以了，必须有列名姓名和准考证，最好有学号和院系（虽然没有也可以），直接运行spider.py，输出到cet-grades.csv中。
+## Single query
 
+```python
+from cetdb import chsi
+
+information = ('Your name', 'Your ticket')
+print(chsi.query(information))
+```
+
+## Group of query
+
+see `demo.py`.
