@@ -20,7 +20,7 @@ Neccessary if you need read XLS or XLSX file, please install xlrd first.
 from cetdb import chsi
 
 information = ('Your name', 'Your ticket')
-print(chsi.query(information))
+print(chsi.query([information]))
 ```
 
 ## Group of query
