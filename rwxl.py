@@ -1,8 +1,8 @@
 import xlrd
 import csv
 
-__possible_name = {'姓名', 'name', 'xm'}
-__possible_ticket = {'准考证', '准考证号', 'zkzh'}
+__possible_name = {'姓名', 'name', 'xm', 'un'}
+__possible_ticket = {'准考证', '准考证号', 'zkzh', 'kh'}
 
 
 def _get_index(header):
@@ -48,5 +48,5 @@ def assemble(csvname, grades):
 
 
 if __name__ == '__main__':
-    for name, ticket in gather('cet-se.xlsx'):
+    for name, ticket in gather('四六级准考证号.xlsx'):
         print(name, ticket)

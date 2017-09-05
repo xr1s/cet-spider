@@ -2,7 +2,7 @@ import rwxl
 from cetdb import chsi
 
 if __name__ == '__main__':
-    result = chsi.query(rwxl.gather('四六级准考证号.xls'))
+    result = chsi.query(rwxl.gather('四六级准考证号.xlsx'))
     for stu_info in result:
         if isinstance(stu_info, Exception):
             print(*stu_info.args)
